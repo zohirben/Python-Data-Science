@@ -4,13 +4,19 @@ import string
 
 def main():
     """Count character categories in a string."""
-    if len(sys.argv) == 1:
-        print("What is the text to count?")
-        text = input()
-    else:
-        assert len(sys.argv) == 2, \
-            "more than one argument is provided"
-        text = sys.argv[1]
+    try:
+        if len(sys.argv) == 1:
+            print("What is the text to count?")
+            text = sys.stdin.read()
+        else:
+            assert len(sys.argv) == 2, \
+                "more than one argument is provided"
+            text = sys.argv[1]
+    except AssertionError as error:
+        print(f"AssertionError: {error}")
+        return
+    except EOFError:
+        text = ""
 
     upper = 0
     lower = 0

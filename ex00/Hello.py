@@ -1,7 +1,7 @@
 ft_list = ["Hello"]
 ft_tuple = ("Hello", "toto!")
 ft_set = {"Hello", "Hello", "tutu!"}
-ft_dict = {"Hello" : "titi!"}
+ft_dict = {"Hello": "titi!"}
 
 # Lists are mutable, so we can modify them directly with append().
 ft_list.append("World!")
